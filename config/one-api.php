@@ -16,6 +16,6 @@ return [
         'url'        => env('ONEAPI_API_URL', 'https://platform.clickatell.com/v1/'),
         'timeout'    => (float) env('ONEAPI_API_TIMEOUT', 10.0),
         'should_log' => env('ONEAPI_API_SHOULD_LOG', true),
-        'key'        => env('ONEAPI_API_KEY'),
+        'key'        => env('ONEAPI_API_KEY', 'INVALID'),
     ],
 ];
