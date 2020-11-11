@@ -44,7 +44,7 @@ class OneApiServiceProvider extends ServiceProvider
                 $config->get('one-api.api.url'),
                 $config->get('one-api.api.timeout'),
                 $config->get('one-api.api.should_log'),
-                $config->get('one-api.key')
+                $config->get('one-api.api.key')
             );
         });
     }
