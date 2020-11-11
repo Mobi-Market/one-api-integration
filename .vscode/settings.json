@@ -1,0 +1,11 @@
+{
+    "search.exclude": {
+        "**/vendor": true
+    },
+    "files.eol": "\n",
+    "cSpell.words": [
+        "Clickatell",
+        "Mobi",
+        "whatsapp"
+    ]
+}
