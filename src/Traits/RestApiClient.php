@@ -12,9 +12,6 @@ namespace MobiMarket\OneApi\Traits;
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\MessageFormatter;
-use GuzzleHttp\Middleware;
-use Illuminate\Support\Facades\Log;
 use MobiMarket\OneApi\Exceptions\NotFound;
 use MobiMarket\OneApi\Exceptions\PaymentRequired;
 use MobiMarket\OneApi\Exceptions\RequestFailed;
@@ -39,34 +36,15 @@ trait RestApiClient
     public function buildClient(
         string $base_uri,
         float $timeout,
-        bool $should_log,
         string $api_key
     ): void {
         $stack = HandlerStack::create();
-
-        if (true === $should_log) {
-            $stack->push(
-                Middleware::log(
-                    Log::getMonolog(),
-                    new MessageFormatter('{req_body} - {res_body}')
-                )
-            );
-
-            $stack->push(
-                Middleware::log(
-                    Log::getMonolog(),
-                    new MessageFormatter('{uri} - {method} - {code}')
-                )
-            );
-        }
 
         $this->client = new HttpClient([
             // Base URI is used with relative requests
             'base_uri'    => $base_uri,
             // You can set any number of default request options.
             'timeout'     => $timeout,
-            // Handler stack for logging purposes.
-            'handler'     => $stack,
             // Disable internal errors to let us catch all status codes.
             'http_errors' => false,
         ]);

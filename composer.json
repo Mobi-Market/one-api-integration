@@ -1,15 +1,13 @@
 {
     "name": "mobi-market/one-api-integration",
     "type": "library",
-    "description": "Clickatell One API Laravel Integration package",
+    "description": "Clickatell One API Integration package",
     "require": {
         "php": "^7.2",
         "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.15@dev",
-        "illuminate/support": "~5.5.0",
-        "illuminate/http": "~5.5.0"
+        "friendsofphp/php-cs-fixer": "^2.15@dev"
     },
     "license": "proprietary",
     "authors": [
@@ -22,7 +20,7 @@
             "email": "scott.jones@autumndev.co.uk"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -33,15 +31,5 @@
             "MobiMarket\\OneApi\\": "src/"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "MobiMarket\\OneApi\\OneApiServiceProvider"
-            ],
-            "aliases": {
-                "OneApi": "MobiMarket\\OneApi\\OneApi"
-            },
-            "dont-discover": []
-        }
-    }
+    "extra": {}
 }

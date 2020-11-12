@@ -10,10 +10,7 @@ declare(strict_types=1);
 
 namespace MobiMarket\OneApi\Entities;
 
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Str;
-
-class FillableEntity implements Arrayable
+class FillableEntity
 {
     public function __construct(iterable $fill = [])
     {

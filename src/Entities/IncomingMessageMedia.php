@@ -46,9 +46,10 @@ class IncomingMessageMedia extends IncomingMessageType
     {
         $files = $fill['files'] ?? null;
         if ($files) {
-            $this->files = collect($files)
-                ->mapInto(IncomingMedia::class)
-                ->toArray();
+            $this->files = [];
+            foreach ($files as $file) {
+                $this->files[] = new IncomingMedia($file);
+            }
 
             unset($fill['files']);
         }
